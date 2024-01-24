@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: "terraform"
+    directory: "/groups/storage"
+    schedule:
+      interval: "daily"
+    reviewers:
+      - "companieshouse/platform-admin"
