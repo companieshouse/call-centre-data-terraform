@@ -1,8 +1,8 @@
 resource "aws_iam_user" "data" {
-  name = "${var.service}-${var.environment}"
+  name = "${var.environment}-${var.service}"
 
   tags = merge(local.common_tags, {
-    Name = "${var.service}-${var.environment}-data-user"
+    Name = "${var.environment}-${var.service}-data-user"
   })
 }
 
@@ -11,7 +11,7 @@ resource "aws_iam_access_key" "data" {
 }
 
 resource "aws_iam_policy" "data" {
-  name        = "${var.service}-${var.environment}-data-user-policy"
+  name        = "${var.environment}-${var.service}-data-user-policy"
   description = "IAM policy for data user to access objects in call centre data bucket"
   policy      = data.aws_iam_policy_document.data.json
 }

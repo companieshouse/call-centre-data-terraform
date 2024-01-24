@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "data" {
-  bucket = "${var.service}.${var.environment}.${var.aws_account}.ch.gov.uk"
+  bucket = "${var.environment}.${var.service}.${var.aws_account}.ch.gov.uk"
   tags   = local.common_tags
 }
 
