@@ -3,6 +3,6 @@ updates:
   - package-ecosystem: "terraform"
     directory: "/groups/storage"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     reviewers:
       - "companieshouse/platform-admin"
