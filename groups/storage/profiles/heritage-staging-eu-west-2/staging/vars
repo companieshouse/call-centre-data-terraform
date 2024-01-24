@@ -1,0 +1,2 @@
+aws_account = "heritage-staging"
+environment = "staging"
