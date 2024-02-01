@@ -9,7 +9,7 @@ resource "aws_iam_access_key" "data" {
 
 resource "aws_iam_policy" "data" {
   name        = "${var.environment}-${var.service}-accessor"
-  description = "IAM policy for accessor user to retrieve objects in call centre data S3 bucket"
+  description = "IAM policy for accessor user to manage objects in call centre data S3 bucket"
   policy      = data.aws_iam_policy_document.data.json
   tags        = local.common_tags
 }
