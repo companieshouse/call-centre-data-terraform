@@ -97,6 +97,24 @@ data "aws_iam_policy_document" "data_migration_execution" {
       "${aws_s3_bucket.data.arn}/*"
     ]
   }
+
+  dynamic "statement" {
+    for_each = var.data_migration_source_kms_key_arn != "" ? [1] : []
+
+    content {
+      sid = "AllowUseOfExternalKMSKey"
+
+      effect = "Allow"
+
+      actions = [
+        "kms:*"
+      ]
+
+      resources = [
+        var.data_migration_source_kms_key_arn
+      ]
+    }
+  }
 }
 
 data "aws_iam_policy_document" "data_migration_trust" {

@@ -31,10 +31,11 @@ resource "aws_iam_access_key" "data_migration" {
 }
 
 resource "aws_iam_role" "data_migration" {
-  count              = var.data_migration_enabled ? 1 : 0
-  name               = "${var.environment}-${var.service}-data-migrator-role"
-  assume_role_policy = data.aws_iam_policy_document.data_migration_trust[0].json
-  tags               = local.common_tags
+  count                = var.data_migration_enabled ? 1 : 0
+  name                 = "${var.environment}-${var.service}-data-migrator-role"
+  assume_role_policy   = data.aws_iam_policy_document.data_migration_trust[0].json
+  max_session_duration = 28800
+  tags                 = local.common_tags
 }
 
 resource "aws_iam_policy" "data_migration" {

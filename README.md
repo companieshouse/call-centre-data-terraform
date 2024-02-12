@@ -12,7 +12,7 @@ Data is encrypted at rest using [server-side encryption](https://docs.aws.amazon
 
 ## Branching Strategy
 
-This project uses a trunk-based branching strategy and infrastructure changes are versioned and applied from the `main` branch after merge via the [infrastructure pipeline](https://github.com/companieshouse/ci-pipelines/blob/master/pipelines/platform/team-platform/call-centre-data-terraform):
+This project uses a trunk-based branching strategy and infrastructure changes are versioned and applied from the `main` branch after merge via the [infrastructure pipeline](https://github.com/companieshouse/ci-pipelines/blob/master/pipelines/ssplatform/team-platform/call-centre-data-terraform):
 
 ```mermaid
 %%{init: { 'logLevel': 'debug', 'theme': 'default' , 'themeVariables': {

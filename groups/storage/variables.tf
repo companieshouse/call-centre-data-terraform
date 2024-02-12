@@ -15,6 +15,12 @@ variable "data_migration_source_bucket_arn" {
   default     = ""
 }
 
+variable "data_migration_source_kms_key_arn" {
+  type        = string
+  description = "The ARN of the external KMS key that will be used when migrating data from the source bucket"
+  default     = ""
+}
+
 variable "region" {
   type        = string
   description = "The AWS region in which resources will be created"
