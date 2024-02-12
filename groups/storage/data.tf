@@ -110,7 +110,7 @@ data "aws_iam_policy_document" "data_migration_execution" {
         "kms:*"
       ]
 
-      resources =  [
+      resources = [
         var.data_migration_source_kms_key_arn
       ]
     }
