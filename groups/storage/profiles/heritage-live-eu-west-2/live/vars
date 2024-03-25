@@ -1,4 +1,2 @@
 aws_account = "heritage-live"
 environment = "live"
-
-data_migration_enabled = true
