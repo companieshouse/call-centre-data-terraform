@@ -55,7 +55,7 @@ data "aws_iam_policy_document" "data" {
     condition {
       test     = "StringNotLike"
       variable = "aws:userId"
-      values = concat(trusted_sso_role_ids, [
+      values = concat(local.trusted_sso_role_ids, [
         aws_iam_user.data.unique_id,
         aws_iam_user.data_2.unique_id,
         data.aws_caller_identity.current.account_id,
