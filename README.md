@@ -1,6 +1,6 @@
 # call-centre-data-terraform
 
-Infrastructure code for the provisioning of object storage for call centre data (logs, emails).
+Infrastructure code for the provisioning of object storage for call centre data (call recordings, emails, and metadata).
 
 ## Overview
 
