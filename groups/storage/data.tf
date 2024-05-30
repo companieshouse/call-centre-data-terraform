@@ -58,6 +58,7 @@ data "aws_iam_policy_document" "data" {
       values = concat(local.trusted_sso_role_ids, [
         aws_iam_user.data.unique_id,
         aws_iam_user.data_2.unique_id,
+        aws_iam_user.data_3.unique_id,
         data.aws_caller_identity.current.account_id,
         data.vault_generic_secret.secrets.data["concourse-user-id"]
       ])
