@@ -1,22 +1,20 @@
 terraform {
-  required_version = ">= 1.3.0"
+  required_version = ">= 1.3.0, < 2.0.0"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.0.0, < 6.44.1"
+      version = ">= 6.0, < 7.0"
     }
     vault = {
-      source = "hashicorp/vault"
-      version = ">= 4.2.0"
+      source  = "hashicorp/vault"
+      version = ">= 5.0, < 6.0"
     }
   }
+
+  backend "s3" {}
 }
 
 provider "aws" {
   region = var.region
-}
-
-terraform {
-  backend "s3" {}
 }
